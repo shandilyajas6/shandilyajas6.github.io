@@ -1,1 +1,31 @@
-text
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #count {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+</head>
+<body>
+  <button id="button">Click me!</button>
+  <div id="count">0</div>
+  <script>
+    const button = document.getElementById("button");
+    const count = document.getElementById("count");
+    let clicks = 0;
+    button.addEventListener("click", () => {
+      clicks++;
+      count.innerHTML = clicks;
+    });
+  </script>
+</body>
+</html>
