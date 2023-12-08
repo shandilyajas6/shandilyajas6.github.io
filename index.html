@@ -3,20 +3,29 @@
 <head>
   <title>SeedSpeed Secert Page</title>
 <style>
+  body {
+    background-color: green;
+  }
   #button {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 50%;
+    transform: translate(50%, -50%);
     font-size: 24px;
     font-weight: bold;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
   }
   #count {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     font-size: 24px;
     font-weight: bold;
+    color: white;
   }
 </style>
 </head>
@@ -36,6 +45,14 @@
     });
     const resetButton = document.createElement('button');
     resetButton.innerHTML = 'Reset';
+    resetButton.style.position = 'absolute';
+    resetButton.style.top = '0';
+    resetButton.style.right = '0';
+    resetButton.style.backgroundColor = 'red';
+    resetButton.style.color = 'white';
+    resetButton.style.border = 'none';
+    resetButton.style.padding = '10px 20px';
+    resetButton.style.borderRadius = '5px';
     resetButton.addEventListener('click', () => {
       clicks = 0;
       count.innerHTML = clicks;
