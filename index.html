@@ -31,6 +31,21 @@
       clicks++;
       count.innerHTML = clicks;
     });
+    window.addEventListener('beforeunload', function() {
+      localStorage.setItem('clicks', clicks);
+    });
+    const resetButton = document.createElement('button');
+    resetButton.innerHTML = 'Reset';
+    resetButton.addEventListener('click', () => {
+      clicks = 0;
+      count.innerHTML = clicks;
+      localStorage.setItem('clicks', clicks);
+    });
+    document.body.appendChild(resetButton);
+    if (localStorage.getItem('clicks')) {
+      clicks = localStorage.getItem('clicks');
+      count.innerHTML = clicks;
+    }
   </script>
 </body>
 </html>
